@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html">START</a>
+        <a href="./login.html" aria-current="page">LOGIN</a>
+        <a href="./konkurs.html">KONKURS</a>
+        <a href="./uwagi.html">UWAGI</a>
+      </nav>
+    </header>
+    <main>
+      <h1 class="title">Login form</h1>
+      <div class="content">
+        <form action="https://httpbin.org/post" method="post" class="form">
+          <div class="field">
+            <label class="input-label" for="username">Username:</label><br />
+            <input
+              class="input-field"
+              type="text"
+              id="username"
+              name="username"
+              maxlength="60"
+              required
+            />
+          </div>
+          <div class="field">
+            <label class="input-label" for="password">Password:</label><br />
+            <input
+              class="input-field"
+              type="password"
+              id="password"
+              name="password"
+              maxlength="30"
+              minlength="8"
+              required
+            />
+          </div>
+
+          <button id="submit" class="btn" type="submit">Log in</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

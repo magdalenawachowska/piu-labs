@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+.form-wrap {
+  max-width: 500px;
+  margin: 24px auto 32px;
+  padding: 0 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.title-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 12px;
+}
+
+.form-title .line1 {
+  display: block;
+  font-size: 40px;
+  font-weight: 650;
+  color: #111827;
+}
+.form-title .line2 {
+  display: block;
+  white-space: nowrap;
+  font-size: 40px;
+  font-weight: 650;
+  color: #111827;
+}
+.theme-toggle {
+  justify-self: end;
+  background: transparent;
+  font-size: 36px;
+  line-height: 1;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 16px 14px;
+}
+
+form {
+  display: grid;
+  gap: 16px;
+  font-size: 16px;
+}
+label,
+legend,
+.choice {
+  color: #374151;
+  font-weight: 600;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='date'],
+input[type='number'],
+input[type='color'],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+  font: inherit;
+}
+input[type='color'] {
+  padding: 0;
+  height: 40px;
+  cursor: pointer;
+}
+
+input:focus,
+select:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+fieldset {
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  padding: 12px 14px;
+}
+legend {
+  padding: 0 8px;
+}
+
+button,
+input[type='radio'],
+input[type='checkbox'],
+.choice,
+.submit {
+  cursor: pointer;
+}
+
+label[for='category']:hover,
+label[for='birth']:hover,
+#category:hover,
+#birth:hover {
+  cursor: pointer;
+}
+
+.agree {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #4caf50;
+  transition: filter 0.12s, transform 0.04s, background-color 0.12s;
+}
+.submit:hover {
+  background: #45a049;
+}
+.submit:active {
+  transform: translateY(1px);
+}
+.submit:focus-visible {
+  outline: 2px solid rgba(16, 185, 129, 0.55);
+  outline-offset: 2px;
+}
+
+.form-wrap:has(#theme-toggle:checked) .card {
+  color-scheme: dark;
+  background: #1d1d1d;
+  border-color: #2b2b2b;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+.form-wrap:has(#theme-toggle:checked) form,
+.form-wrap:has(#theme-toggle:checked) label,
+.form-wrap:has(#theme-toggle:checked) legend,
+.form-wrap:has(#theme-toggle:checked) .choice {
+  color: #f3f4f6;
+}
+.form-wrap:has(#theme-toggle:checked) input[type='text'],
+.form-wrap:has(#theme-toggle:checked) input[type='email'],
+.form-wrap:has(#theme-toggle:checked) input[type='date'],
+.form-wrap:has(#theme-toggle:checked) input[type='number'],
+.form-wrap:has(#theme-toggle:checked) select {
+  background: #2b2b2b;
+  color: #e5e7eb;
+  border-color: #3a3a3a;
+}
+.form-wrap:has(#theme-toggle:checked) input::placeholder {
+  color: #9ca3af;
+}
+.form-wrap:has(#theme-toggle:checked) fieldset {
+  border-color: #3a3a3a;
+}

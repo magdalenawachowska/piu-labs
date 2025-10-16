@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uwagi</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html">START</a>
+        <a href="./login.html">LOGIN</a>
+        <a href="./konkurs.html">KONKURS</a>
+        <a href="./uwagi.html" aria-current="page">UWAGI</a>
+      </nav>
+    </header>
+    <main class="uwagi">
+      <h1>Uwagi o formularzach HTML</h1>
+
+      <section class="card">
+        <h2>Zastosowanie</h2>
+        <p class="muted">
+          Formularze można prosto wykorzystać podczas tworzenia stron
+          internetowych. Pozwalają one na zbiór danych od użytkowników bez
+          dodatkowych bibliotek. Umożliwiają szybkie utworzenie działającego
+          rozwiązania.
+        </p>
+        <ul class="list">
+          <li>logowanie, rejestracja, użytkowników</li>
+          <li>ankiety, quizy</li>
+          <li>zgłoszenia, aplikacje</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Zalety i wady</h2>
+        <div class="compare">
+          <div class="panel">
+            <h3 class="ok">Zalety</h3>
+            <ul class="list">
+              <li>proste użycie</li>
+              <li>wbudowana walidacja</li>
+              <li>wiele róznych typów pól</li>
+              <li>brak konieczności stosowania JavaScript</li>
+              <li>łatwa integracja z dostępnością</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3 class="warn">Wady</h3>
+            <ul class="list">
+              <li>walidacja klienta nie zastępuje walidacji na serwerze</li>
+              <li>możliwy brak zabezpieczenia danych wrażliwych</li>
+              <li>ograniczona interakcja bez JavaScript</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>GET vs POST</h2>
+        <div class="compare">
+          <div class="panel">
+            <h3>GET</h3>
+            <ul class="list">
+              <li>parametry widoczne w adresie</li>
+              <li>łatwo udostępnić wynik i dodać do zakładek</li>
+              <li>dobry do wyszukiwarek i filtrów</li>
+              <li>nie do danych wrażliwych, limit długości URL</li>
+            </ul>
+            <pre><code>&lt;form action="/szukaj" method="get"&gt;
+  &lt;input name="q" required&gt;
+  &lt;button type="submit"&gt;Szukaj&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          </div>
+          <div class="panel">
+            <h3>POST</h3>
+            <ul class="list">
+              <li>dane w treści żądania, nie w adresie</li>
+              <li>lepsze do logowania, zapisów, uploadu</li>
+              <li>brak limitu długości jak w URL</li>
+              <li>wymaga walidacji i zabezpieczeń po stronie serwera</li>
+            </ul>
+            <pre><code>&lt;form action="/zgloszenie" method="post"&gt;
+  &lt;input type="email" name="email" required&gt;
+  &lt;button type="submit"&gt;Wyślij&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Dobre praktyki</h2>
+        <ul class="list">
+          <li>łaczenie pól z etykietą poprzez atrybuty for i id</li>
+          <li>
+            używanie odpowiednich typów i zakresów zamiast ogólnego tekstu
+          </li>
+          <li>oznaczenia pól wymaganych i korzystanie z walidacji HTML</li>
+          <li>zadbanie o czytelny, przejrzysty design</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
