@@ -1,0 +1,431 @@
+:root {
+  --gap: 16px;
+  --r: 22px;
+  --pad: 14px 18px;
+  --frame: #c88647;
+  --bg: #fff5e7;
+  --tile: #1f5bff;
+  --tile-text: #fff;
+
+  --col-2: calc((100% - var(--gap)) / 2);
+  --col-3: calc((100% - 2 * var(--gap)) / 3);
+
+  --wrap-w: 100%;
+}
+@media (min-width: 1024px) and (max-width: 1395px) {
+  :root {
+    --wrap-w: 66%;
+  }
+}
+@media (min-width: 653px) and (max-width: 984px) {
+  :root {
+    --wrap-w: 92%;
+  }
+}
+@media (max-width: 652px) {
+  :root {
+    --wrap-w: 94%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  font: 600 18px/1.25 system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+}
+h1 {
+  width: min(var(--wrap-w), 1200px);
+  margin: 24px auto 12px;
+  padding: 0;
+  font-weight: 700;
+  font-size: clamp(28px, 3.6vw, 56px);
+}
+
+header {
+  width: min(var(--wrap-w), 1200px);
+  margin: 8px auto 0;
+}
+.theme-picker {
+  display: block;
+  border: 2px solid var(--frame);
+  border-radius: 14px;
+  padding: 10px 12px 12px;
+  background: #f7edd3;
+}
+legend {
+  padding: 0 6px;
+}
+.theme-picker label {
+  margin-right: 14px;
+}
+
+.container {
+  width: min(var(--wrap-w), 1200px);
+  margin: 14px auto 32px;
+  border: 2px solid var(--frame);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.item {
+  background: var(--tile);
+  color: var(--tile-text);
+  border-radius: var(--r);
+  padding: var(--pad);
+  text-align: center;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.14) inset;
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+header:has(input[name='version'][value='blue']:checked) + .container {
+  --tile: #063ac9;
+}
+header:has(input[name='version'][value='red']:checked) + .container {
+  --tile: #ef0909;
+}
+header:has(input[name='version'][value='green']:checked) + .container {
+  --tile: #147221;
+}
+
+header:has(input[value='blue']:checked) + .container .item {
+  @media (min-width: 1024px) {
+    flex-basis: var(--col-3);
+  }
+}
+header:has(input[value='blue']:checked) + .container .item:nth-child(5) {
+  @media (min-width: 1024px) {
+    margin-left: calc(var(--col-3) + var(--gap));
+  }
+}
+
+header:has(input[value='blue']:checked) + .container {
+  @media (min-width: 985px) and (max-width: 1023px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+header:has(input[value='blue']:checked) + .container .item {
+  @media (min-width: 985px) and (max-width: 1023px) {
+    flex-basis: auto;
+    width: 70%;
+    max-width: 760px;
+    margin-left: 0;
+  }
+}
+
+header:has(input[value='blue']:checked) + .container {
+  @media (min-width: 653px) and (max-width: 984px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+header:has(input[value='blue']:checked) + .container .item {
+  @media (min-width: 653px) and (max-width: 984px) {
+    flex-basis: auto;
+    width: 78%;
+    max-width: 760px;
+    margin-left: 0;
+  }
+}
+
+header:has(input[value='blue']:checked) + .container {
+  @media (max-width: 652px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+header:has(input[value='blue']:checked) + .container .item {
+  @media (max-width: 652px) {
+    flex-basis: auto;
+    width: 88%;
+    max-width: 520px;
+    margin-left: 0;
+  }
+}
+
+header:has(input[value='red']:checked) + .container .item {
+  @media (max-width: 652px) {
+    flex-basis: var(--col-2);
+    order: initial;
+    font-weight: 600;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(2) {
+  @media (max-width: 652px) {
+    order: 1;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(3) {
+  @media (max-width: 652px) {
+    order: 2;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(1) {
+  @media (max-width: 652px) {
+    order: 3;
+    flex-basis: 100%;
+    font-weight: 700;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(1)::after {
+  @media (max-width: 652px) {
+    content: 'Jestem większy i na środku!';
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(4) {
+  @media (max-width: 652px) {
+    order: 4;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(5) {
+  @media (max-width: 652px) {
+    order: 5;
+  }
+}
+
+header:has(input[value='red']:checked) + .container .item {
+  @media (min-width: 653px) and (max-width: 984px) {
+    flex-basis: var(--col-2);
+    order: initial;
+    font-weight: 600;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(2) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    order: 1;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(3) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    order: 2;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(1) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    order: 3;
+    flex-basis: 100%;
+    font-weight: 700;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(1)::after {
+  @media (min-width: 653px) and (max-width: 984px) {
+    content: 'Jestem większy i na środku!';
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(4) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    order: 4;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(5) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    order: 5;
+  }
+}
+
+header:has(input[value='red']:checked) + .container .item:nth-child(1) {
+  font-weight: 700;
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(1)::after {
+  content: 'Jestem większy i na środku!';
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+header:has(input[value='red']:checked) + .container {
+  @media (min-width: 1024px) {
+    flex-wrap: nowrap;
+  }
+}
+header:has(input[value='red']:checked) + .container .item {
+  @media (min-width: 1024px) {
+    --unit: calc((100% - 4 * var(--gap)) / 6);
+    flex: 0 0 var(--unit);
+    min-width: 0;
+    order: initial;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(2) {
+  @media (min-width: 1024px) {
+    order: 1;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(3) {
+  @media (min-width: 1024px) {
+    order: 2;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(1) {
+  @media (min-width: 1024px) {
+    order: 3;
+    flex-basis: calc(2 * var(--unit));
+    font-weight: 700;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(4) {
+  @media (min-width: 1024px) {
+    order: 4;
+  }
+}
+header:has(input[value='red']:checked) + .container .item:nth-child(5) {
+  @media (min-width: 1024px) {
+    order: 5;
+  }
+}
+
+header:has(input[value='green']:checked) + .container {
+  @media (max-width: 984px) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+}
+
+header:has(input[value='green']:checked) + .container .item {
+  @media (max-width: 652px) {
+    width: 82%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(5) {
+  @media (max-width: 652px) {
+    width: 62%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(4) {
+  @media (max-width: 652px) {
+    width: 68%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(3) {
+  @media (max-width: 652px) {
+    width: 74%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(2) {
+  @media (max-width: 652px) {
+    width: 78%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(1) {
+  @media (max-width: 652px) {
+    width: 90%;
+    font-weight: 700;
+  }
+}
+
+header:has(input[value='green']:checked) + .container .item {
+  @media (min-width: 653px) and (max-width: 984px) {
+    width: 80%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(5) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    width: 56%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(4) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    width: 62%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(3) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    width: 68%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(2) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    width: 72%;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(1) {
+  @media (min-width: 653px) and (max-width: 984px) {
+    width: 88%;
+    font-weight: 700;
+  }
+}
+
+header:has(input[value='green']:checked) + .container {
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+}
+header:has(input[value='green']:checked) + .container .item {
+  @media (min-width: 1024px) {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(1) {
+  @media (min-width: 1024px) {
+    flex-grow: 10;
+    font-weight: 700;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(2) {
+  @media (min-width: 1024px) {
+    flex-grow: 7;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(3) {
+  @media (min-width: 1024px) {
+    flex-grow: 5;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(4) {
+  @media (min-width: 1024px) {
+    flex-grow: 4;
+  }
+}
+header:has(input[value='green']:checked) + .container .item:nth-child(5) {
+  @media (min-width: 1024px) {
+    flex-grow: 3;
+  }
+}
+
+header:has(input[value='green']:checked) + .container .item:nth-child(1) {
+  position: relative;
+}
+header:has(input[value='green']:checked)
+  + .container
+  .item:nth-child(1)::before,
+header:has(input[value='green']:checked)
+  + .container
+  .item:nth-child(1)::after {
+  content: '😀';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(2);
+  line-height: 1;
+  pointer-events: none;
+}
+header:has(input[value='green']:checked)
+  + .container
+  .item:nth-child(1)::before {
+  left: 12px;
+}
+header:has(input[value='green']:checked)
+  + .container
+  .item:nth-child(1)::after {
+  right: 12px;
+}
