@@ -99,6 +99,18 @@ h2 {
   font-weight: 700;
   cursor: pointer;
   margin-top: 15px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-origin: center;
+}
+
+.btn:hover {
+  transform: scale(1.5);
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.017);
+}
+
+.btn:active {
+  transform: scale(1.4);
 }
 
 legend {
@@ -151,6 +163,7 @@ legend {
   margin-right: 0.4rem;
   margin-top: 15px;
 }
+
 .pick input:checked + .size {
   background: var(--accent);
   color: #fff;
@@ -165,6 +178,10 @@ legend {
 .to-cart {
   font-weight: 700;
   font-size: 1rem;
+}
+
+.to-cart:hover {
+  transition: transform scale(1.5);
 }
 
 .card:has(#c-blue:checked) {
@@ -191,4 +208,81 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+.photo {
+  transition: transform 0.8s cubic-bezier(0.2, 0.75, 0.3, 1.4),
+    opacity 0.35s ease, border-color 0.3s ease;
+  will-change: transform, opacity;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+@keyframes photo-pop-s {
+  0% {
+    transform: scale(0.92) rotate(-9deg);
+    opacity: 0.15;
+  }
+  55% {
+    transform: scale(1.04) rotate(0.8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes photo-pop-m {
+  0% {
+    transform: scale(0.88) rotate(-12deg);
+    opacity: 0.15;
+  }
+  55% {
+    transform: scale(1.08) rotate(1.2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes photo-pop-l {
+  0% {
+    transform: scale(0.84) rotate(-15deg);
+    opacity: 0.15;
+  }
+  55% {
+    transform: scale(1.12) rotate(1.8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes photo-pop-xl {
+  0% {
+    transform: scale(0.8) rotate(-18deg);
+    opacity: 0.15;
+  }
+  55% {
+    transform: scale(1.18) rotate(2.2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+.card:has(#s:checked) .photo {
+  animation-name: photo-pop-s;
+}
+.card:has(#m:checked) .photo {
+  animation-name: photo-pop-m;
+}
+.card:has(#l:checked) .photo {
+  animation-name: photo-pop-l;
+}
+.card:has(#xl:checked) .photo {
+  animation-name: photo-pop-xl;
 }
