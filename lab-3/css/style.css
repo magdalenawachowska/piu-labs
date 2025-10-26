@@ -1,19 +1,194 @@
-/* Minimalny reset  */
+:root {
+  --bg: #eee;
+
+  --blue: #1958b7;
+  --red: #ea0001;
+  --green: #2c9142;
+  --yellow: #dbba27;
+
+  --accent: var(--blue);
+  --img: url('../polo_b.png');
+}
+
 html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
+  font: 16px/1.5 system-ui, sans-serif;
+  background: var(--bg);
 }
 body {
   margin: 1rem;
+}
+h1 {
+  margin: 0 0 1rem;
+}
+h2 {
+  margin: 0.25rem 0;
+}
+
+.card {
+  --gap: 20px;
+  --pad: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  padding: var(--pad);
+  border-radius: 12px;
+  background: #eee;
+
+  /*max-width: calc(500px + 300px + var(--gap) + 2 * var(--pad));*/
+  max-width: 900px;
+  margin-inline: auto;
+
+  /*box-sizing: border-box;*/
+}
+
+.photo {
+  flex: 1 1 500px;
+  min-width: 500px;
+  inline-size: min(500px, 100%);
+  /*inline-size: 500px;*/
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  background: #fff var(--img) center/contain no-repeat;
+}
+
+.info {
+  flex: 1 1 300px;
+  /*
+  min-width: 300px;
+  inline-size: min(300px, 100%);*/
+  inline-size: 300px;
+  text-align: center;
+}
+
+.info p {
+  color: #2d2e2f;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+}
+
+.badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 4px 14px;
+  border-radius: 5px;
+  color: #fff;
+  background: var(--accent);
+  margin: 0.25rem 0 0.5rem;
+  margin-left: 3.3rem;
+}
+
+.first-row {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #2d2e2f;
+  border-radius: 5px;
+  color: #fff;
+  background: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+legend {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0.25rem;
+}
+.pick {
+  border: 0;
   padding: 0;
+  margin: 0 0 0.5rem;
+}
+
+.pick input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.swatch {
+  --c: #000;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  outline: 2px solid #d8deea;
+  background: var(--c);
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.pick input:checked + .swatch {
+  outline-color: #2d2e2f;
+}
+
+.size {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 36px;
+  padding: 0 0.6rem;
+  border: 2px solid #2d2e2f;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 0.4rem;
+  margin-top: 15px;
+}
+.pick input:checked + .size {
+  background: var(--accent);
+  color: #fff;
+  border-color: #2d2e2f;
+}
+
+.price {
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+.to-cart {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card:has(#c-blue:checked) {
+  --accent: var(--blue);
+  --img: url('../polo_b.png');
+}
+.card:has(#c-red:checked) {
+  --accent: var(--red);
+  --img: url('../polo_r.png');
+}
+.card:has(#c-green:checked) {
+  --accent: var(--green);
+  --img: url('../polo_g.png');
+}
+.card:has(#c-yellow:checked) {
+  --accent: var(--yellow);
+  --img: url('../polo_y.png');
 }
 
 a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
+  color: #06c;
+  text-decoration: none;
   font-size: 1.4rem;
 }
 a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+  text-decoration: underline;
 }

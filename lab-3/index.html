@@ -6,7 +6,94 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
+    <main>
+      <h1>Lab 3</h1>
+
+      <article class="card">
+        <div class="photo" aria-label="Zdjęcie koszulki"></div>
+
+        <section class="info">
+          <div class="first-row">
+            <h2>Koszulka Polo</h2>
+            <span class="badge">Promocja!</span>
+          </div>
+
+          <p class="muted">
+            Lorem ipsum dolor sit amet consectetur <br />
+            adipisicing elit. Quibusdam quis adipisci <br />
+            maiores.
+          </p>
+
+          <fieldset class="pick">
+            <legend>Kolor</legend>
+
+            <label>
+              <input type="radio" name="color" id="c-blue" checked />
+              <span
+                class="swatch"
+                style="--c: var(--blue)"
+                title="niebieski"
+              ></span>
+            </label>
+
+            <label>
+              <input type="radio" name="color" id="c-red" />
+              <span
+                class="swatch"
+                style="--c: var(--red)"
+                title="czerwony"
+              ></span>
+            </label>
+
+            <label>
+              <input type="radio" name="color" id="c-green" />
+              <span
+                class="swatch"
+                style="--c: var(--green)"
+                title="zielony"
+              ></span>
+            </label>
+
+            <label>
+              <input type="radio" name="color" id="c-yellow" />
+              <span
+                class="swatch"
+                style="--c: var(--yellow)"
+                title="żółty"
+              ></span>
+            </label>
+          </fieldset>
+
+          <fieldset class="pick">
+            <legend>Rozmiar</legend>
+            <label>
+              <input type="radio" name="size" />
+              <span class="size">S</span>
+            </label>
+            <label>
+              <input type="radio" name="size" checked />
+              <span class="size">M</span>
+            </label>
+            <label>
+              <input type="radio" name="size" />
+              <span class="size">L</span>
+            </label>
+            <label>
+              <input type="radio" name="size" />
+              <span class="size">XL</span>
+            </label>
+          </fieldset>
+
+          <h2 class="price">59,99 zł</h2>
+
+          <button class="btn">
+            <span>🛒</span>
+            <span class="to-cart">Do koszyka</span>
+          </button>
+        </section>
+      </article>
+
+      <a href="..">Powrót</a>
+    </main>
   </body>
 </html>
