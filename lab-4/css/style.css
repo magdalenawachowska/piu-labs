@@ -1,8 +1,7 @@
-/* Minimalny reset  */
 html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
 }
 body {
   margin: 1rem;
@@ -10,10 +9,92 @@ body {
 }
 
 a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
+  color: #0066cc;
+  text-decoration: none;
   font-size: 1.4rem;
 }
 a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+  text-decoration: underline;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.column {
+  background-color: rgb(93, 36, 74);
+  border-radius: 12px;
+  border: 2px solid rgb(0, 0, 0);
+  width: 410px;
+  height: 808px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.column-title {
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.container {
+  width: 400px;
+  height: 745px;
+  /*background-color: rgb(186, 153, 169);*/
+  background-color: rgb(224, 215, 222);
+  border-radius: 12px;
+  margin-left: 5px;
+}
+
+.column-button {
+  margin-left: 20px;
+  height: 35px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(93, 36, 74, 0.35);
+  background: #ffffff;
+  color: rgb(93, 36, 74);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 8px rgba(93, 36, 74, 0.18);
+  transition: background-color 0.18s ease, color 0.18s ease,
+    box-shadow 0.18s ease, transform 0.06s ease, border-color 0.18s ease;
+  cursor: pointer;
+}
+
+.column-button:hover {
+  background: rgb(93, 36, 74);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(93, 36, 74, 0.28);
+}
+
+.column-button:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 3px 10px rgba(93, 36, 74, 0.2);
+}
+
+.column-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9),
+    0 0 0 6px rgba(93, 36, 74, 0.45);
+}
+
+.column-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.counter {
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.card {
+  margin: 10px auto !important;
+  width: 330px;
 }

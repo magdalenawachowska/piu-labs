@@ -4,9 +4,57 @@
     <meta charset="UTF-8" />
     <title>Lab 4</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
     <h1>Lab 4</h1>
+
+    <div class="row">
+      <div class="content">
+        <div class="controls">
+          <button id="addPaperToDo" class="column-button">Dodaj kartę</button>
+          <button id="changePaperColorToDo" class="column-button">
+            Koloruj kolumnę
+          </button>
+          <p class="counter">Licznik kart: <span id="toDoCounter"></span></p>
+        </div>
+        <div id="toDoColumn" class="column">
+          <p class="column-title">To Do</p>
+          <div class="container"></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="controls">
+          <button id="addPaperInProgress" class="column-button">
+            Dodaj kartę
+          </button>
+          <button id="changePaperColorInProgress" class="column-button">
+            Koloruj kolumnę
+          </button>
+          <p id="inProgressCounter" class="counter">Licznik kart:</p>
+        </div>
+        <div id="inProgressColumn" class="column">
+          <p class="column-title">In Progress</p>
+          <div class="container"></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="controls">
+          <button id="addPaperDone" class="column-button">Dodaj kartę</button>
+          <button id="changePaperColorDone" class="column-button">
+            Koloruj kolumnę
+          </button>
+          <p id="doneCounter" class="counter">Licznik kart:</p>
+        </div>
+        <div id="doneColumn" class="column">
+          <p class="column-title">Done</p>
+          <div class="container"></div>
+        </div>
+      </div>
+    </div>
+
     <a href="..">Powrót</a>
   </body>
 </html>
