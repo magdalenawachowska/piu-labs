@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kształty — Observer + Store</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <h1>Shapes (observer, store, event delegation)</h1>
+
+    <div id="container" aria-label="pole z kształtami">
+      <section class="column">
+        <h2 class="counter">Circles: <span id="circles-counter">0</span></h2>
+        <div class="controls">
+          <button id="add-c-btn">Add circle</button>
+          <button id="recolor-c-btn">Recolor circles</button>
+          <button id="reset-c-btn">Reset circles</button>
+        </div>
+        <div id="circles-container" class="bucket"></div>
+      </section>
+
+      <section class="column">
+        <h2 class="counter">Squares: <span id="squares-counter">0</span></h2>
+        <div class="controls">
+          <button id="add-s-btn">Add square</button>
+          <button id="recolor-s-btn">Recolor squares</button>
+          <button id="reset-s-btn">Reset squares</button>
+        </div>
+        <div id="squares-container" class="bucket"></div>
+      </section>
+    </div>
+  </body>
+</html>
