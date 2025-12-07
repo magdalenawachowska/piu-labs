@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <h1>Ajax demo</h1>
+
+    <div class="buttons-row">
+      <button id="load-data-btn">Load data (GET)</button>
+      <button id="load-data-error-btn">Load data - not found</button>
+      <button id="load-data-timeout-btn">Load data - timeout</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+
+    <div class="buttons-row secondary">
+      <button id="post-btn">Create post (POST)</button>
+      <button id="put-btn">Update post (PUT)</button>
+      <button id="delete-btn">Delete post (DELETE)</button>
+    </div>
+
+    <div class="frame frame-data">
+      <div class="frame-title">Data</div>
+      <div class="container container-data">
+        <div id="loader">Loading...</div>
+        <ul id="data-list"></ul>
+      </div>
+    </div>
+
+    <div class="frame frame-errors">
+      <div class="frame-title">Errors</div>
+      <div class="container container-errors" id="error-container"></div>
+    </div>
+  </body>
+</html>

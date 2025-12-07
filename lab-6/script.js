@@ -1,4 +1,4 @@
-class Ajax {
+export class Ajax {
     constructor(options = {}) {
         this.baseURL = options.baseURL ?? '';
         this.headers = options.headers ?? {
