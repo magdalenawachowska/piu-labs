@@ -1,0 +1,206 @@
+<style>
+  :host {
+    display: block;
+  }
+
+  .card {
+    box-sizing: border-box;
+    width: 260px;
+    height: 330px;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+    padding: 12px;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  ::slotted(img[slot='image']) {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+
+  .name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 4px 0;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 4px 0 6px;
+  }
+
+  .price {
+    color: #1a7f2e;
+    font-weight: 700;
+  }
+
+  .promo {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #d12b2b;
+  }
+
+  .meta {
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 6px;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .colors {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .sizes {
+    text-align: right;
+  }
+
+  .colors ::slotted([slot='colors']) {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+  }
+
+  .colors ::slotted([slot='colors'].selected) {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+
+  .colors ::slotted([slot='colors'][data-color='white']) {
+    background: #ffffff;
+  }
+
+  .colors ::slotted([slot='colors'][data-color='black']) {
+    background: #000000;
+  }
+
+  .colors ::slotted([slot='colors'][data-color='red']) {
+    background: #d62828;
+  }
+
+  .colors ::slotted([slot='colors'][data-color='green']) {
+    background: #2a9d8f;
+  }
+
+  .colors ::slotted([slot='colors'][data-color='gray']) {
+    background: #6c757d;
+  }
+
+  .colors ::slotted([slot='colors'][data-color='pink']) {
+    background: #ff7aa2;
+  }
+
+  .colors ::slotted([slot='colors'][data-color='blue']) {
+    background: #1e88e5;
+  }
+
+  .button {
+    margin-top: auto;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #19a42f;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .button:hover {
+    background-color: #24c13b;
+  }
+
+  .button svg {
+    flex-shrink: 0;
+  }
+</style>
+
+<article class="card">
+  <div class="image-wrapper">
+    <slot name="image"></slot>
+  </div>
+
+  <div class="name">
+    <slot name="name">Bez nazwy</slot>
+  </div>
+
+  <div class="price-row">
+    <div class="price">
+      <slot name="price">—</slot>
+    </div>
+    <div class="promo">
+      <slot name="promo"></slot>
+    </div>
+  </div>
+
+  <div class="meta">
+    <div class="meta-row">
+      <div class="colors">
+        <slot name="colors"></slot>
+      </div>
+      <div class="sizes">
+        <slot name="sizes"></slot>
+      </div>
+    </div>
+  </div>
+
+  <button class="button" type="button">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"
+      />
+      <path
+        d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 
+        1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 
+        1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 
+        0 0 0 0-4h1a.5.5 0 0 0 
+        .491-.408l1.5-8A.5.5 0 0 0 
+        14.5 3H2.89l-.405-1.621A.5.5 0 0 0 
+        2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 
+        14a1 1 0 1 1-2 0 1 1 0 0 1 2 
+        0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
+      />
+    </svg>
+    Dodaj do koszyka
+  </button>
+</article>
