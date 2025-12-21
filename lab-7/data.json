@@ -1,0 +1,56 @@
+[
+  {
+    "id": "airforce1",
+    "name": "Air Force 1",
+    "price": 499.99,
+    "image": "airforce.jpg",
+    "promo": "-10%",
+    "sizes": "36, 37, 38, 39, 40",
+    "colors": ["white", "black"]
+  },
+  {
+    "id": "airjordan1",
+    "name": "Air Jordan 1",
+    "price": 649.99,
+    "image": "airjordan.jpg",
+    "promo": "Bestseller",
+    "sizes": "38–45",
+    "colors": ["red", "black", "white", "green"]
+  },
+  {
+    "id": "nikeblazer",
+    "name": "Nike Blazer",
+    "price": 279.99,
+    "image": "blazer.jpg",
+    "promo": "",
+    "sizes": "36–42",
+    "colors": []
+  },
+  {
+    "id": "nikep6000",
+    "name": "Nike P6000",
+    "price": 399.99,
+    "image": "p6000.jpg",
+    "promo": "",
+    "sizes": "37–44",
+    "colors": []
+  },
+  {
+    "id": "nikeshox",
+    "name": "Nike Shox",
+    "price": 599.99,
+    "image": "shox.jpg",
+    "promo": "-15% z kodem",
+    "sizes": "39–45",
+    "colors": ["black", "white"]
+  },
+  {
+    "id": "nikedunklow",
+    "name": "Nike Dunk Low",
+    "price": 359.99,
+    "image": "dunklow.jpg",
+    "promo": "",
+    "sizes": "36–41",
+    "colors": ["gray", "white", "pink", "blue"]
+  }
+]

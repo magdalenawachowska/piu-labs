@@ -9,23 +9,40 @@ h1 {
   text-align: center;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  max-width: 960px;
+.layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4px;
+  max-width: 1200px;
   margin: 0 auto;
-  justify-items: center;
+}
+
+product-list.products,
+product-list {
+  flex: 1;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
+  justify-content: center;
+  gap: 24px;
 }
 
 @media (max-width: 900px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
+  .layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  shopping-cart {
+    order: -1;
   }
 }
 
 @media (max-width: 600px) {
-  .container {
-    grid-template-columns: 1fr;
+  product-list {
+    grid-template-columns: 260px;
   }
 }

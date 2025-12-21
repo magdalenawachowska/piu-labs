@@ -4,76 +4,14 @@
     <meta charset="utf-8" />
     <title>Lab-7</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="shop-item.js"></script>
+    <script type="module" src="./app.js"></script>
   </head>
   <body>
     <h1>Kicks store</h1>
 
-    <div class="container">
-      <shop-item>
-        <img slot="image" src="airforce.jpg" alt="Air Force 1" />
-        <span slot="name">Air Force 1</span>
-        <span slot="price">499.99 zł</span>
-
-        <span slot="colors" data-color="white" class="selected"></span>
-        <span slot="colors" data-color="black"></span>
-
-        <span slot="sizes">36, 37, 38, 39, 40</span>
-        <span slot="promo">-10%</span>
-      </shop-item>
-
-      <shop-item>
-        <img slot="image" src="airjordan.jpg" alt="Air Jordan 1" />
-        <span slot="name">Air Jordan 1</span>
-        <span slot="price">649.99 zł</span>
-
-        <span slot="colors" data-color="red" class="selected"></span>
-        <span slot="colors" data-color="black"></span>
-        <span slot="colors" data-color="white"></span>
-        <span slot="colors" data-color="green"></span>
-
-        <span slot="sizes">38–45</span>
-        <span slot="promo">Bestseller</span>
-      </shop-item>
-
-      <shop-item>
-        <img slot="image" src="blazer.jpg" alt="Nike Blazer" />
-        <span slot="name">Nike Blazer</span>
-        <span slot="price">279.99 zł</span>
-        <span slot="sizes">36–42</span>
-      </shop-item>
-
-      <shop-item>
-        <img slot="image" src="p6000.jpg" alt="Nike P6000" />
-        <span slot="name">Nike P6000</span>
-        <span slot="price">399.99 zł</span>
-        <span slot="sizes">37–44</span>
-      </shop-item>
-
-      <shop-item>
-        <img slot="image" src="shox.jpg" alt="Nike Shox" />
-        <span slot="name">Nike Shox</span>
-        <span slot="price">599.99 zł</span>
-
-        <span slot="colors" data-color="black" class="selected"></span>
-        <span slot="colors" data-color="white"></span>
-
-        <span slot="sizes">39–45</span>
-        <span slot="promo">-15% z kodem</span>
-      </shop-item>
-
-      <shop-item>
-        <img slot="image" src="dunklow.jpg" alt="Nike Dunk Low" />
-        <span slot="name">Nike Dunk Low</span>
-        <span slot="price">359.99 zł</span>
-
-        <span slot="colors" data-color="gray" class="selected"></span>
-        <span slot="colors" data-color="white"></span>
-        <span slot="colors" data-color="pink"></span>
-        <span slot="colors" data-color="blue"></span>
-
-        <span slot="sizes">36–41</span>
-      </shop-item>
+    <div class="layout">
+      <product-list></product-list>
+      <shopping-cart> </shopping-cart>
     </div>
   </body>
 </html>
