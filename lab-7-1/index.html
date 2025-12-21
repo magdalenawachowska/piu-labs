@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Components Demo</title>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <hello-element>
+      Welcome to custom elements!
+      <div slot="description">
+        Javascript components without <b>frameworks</b>.
+      </div>
+    </hello-element>
+
+    <card-element
+      title="Kraków"
+      desc="rynek tramwaj zabytki uniwersytet aglomeracja"
+    ></card-element>
+    <card-element
+      title="Warszawa"
+      desc="aglomeracja metro stolica wieżowiec korek"
+    ></card-element>
+
+    <button style="padding: 16px">Zmień atrybuty</button>
+
+    <p></p>
+  </body>
+</html>
